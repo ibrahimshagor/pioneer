@@ -1,13 +1,129 @@
-<html>
-    <head>
-        <title>Password</title>
-        <h2>Give Your Password</h2>
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <form class="passform" action="slide.html" onsubmit="return passcheck()">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Login Page</title>
+  <style>
+    /* Reset & Body Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      background: linear-gradient(120deg, #2980b9, #8e44ad);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container */
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      animation: slideIn 0.7s ease;
+    }
+
+    /* Animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: -12px;
+      left: 12px;
+      background: #fff;
+      padding: 0 6px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #8e44ad;
+      box-shadow: 0 0 5px rgba(142, 68, 173, 0.3);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #8e44ad;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      background: #732d91;
+    }
+
+    .forgot {
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .forgot a {
+      color: #8e44ad;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form class="passform" action="slide.html" onsubmit="return passcheck()">
             Password: <input type="password" required id="pass1">
             <input type="submit">
-        </form>
-    </body>
+    </form>
+    <div class="forgot">
+      <a href="#">Forgot Password?</a>
+    </div>
+  </div>
+
+</body>
 </html>
+
